@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Wheel Of Fortune</title>
+<link rel = "stylesheet" href = "WheelOfFortune.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  // 0 = Lose a turn -1 = bannkrupt
+  var values = [0, 800, 350, 450,700,300,
+                 600,5000,600,500,300,500,
+                 800,550,400,300,900,500,
+                 300,900,-1,600,400,300];
+  $(document).ready(function() {
+    document.getElementById('puz').innerHTML =  '_,_,_,_';
+    var degrees = 0;
+    $('.img').click(function rotateMe(e) {
+      genNumber();
+      degrees += 90;
+      $('.img').css({
+          'transform': 'rotate(' + degrees + 'deg)',
+          '-ms-transform': 'rotate(' + degrees + 'deg)',
+          '-moz-transform': 'rotate(' + degrees + 'deg)',
+          '-webkit-transform': 'rotate(' + degrees + 'deg)',
+          '-o-transform': 'rotate(' + degrees + 'deg)'
+        });
+      })
+    });
+    var dash = ["_","_","_","_"];
+    var money = 0;
+    var counter = 0;
+    var answer = ["c", "a", "r", "l"];
+    var c1 = 0;
+  function Run()
+  {
+    count = 0;
+    var your = document.getElementById('text').value;
+    for(var i = 0; i < answer.length; i++)
+    {
+      if (your == answer[i])
+      {
+        dash[i] = your;
+        counter = counter + money;
+        count = count + 1;
+        c1 = c1 + 1;
+      }
+    }
+    alert = your + " Appers In The Puzzle "+ count + " Time";
+      document.getElementById('fin').innerHTML = alert;
+      document.getElementById('puz').innerHTML =  dash;
+      document.getElementById('t').innerHTML = counter;
+      if(winners() == true)
+      {
+         window.location.href = "new.html"
+      }
+    }
+    function winners()
+    {
+      if(c1 == 4)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+function genNumber()
+  {
+  money = values[parseInt(values.length * Math.random())];
+  document.getElementById('counter').innerHTML = "$" + money;
+    if(money == -1)
+    {
+      counter = 0;
+      document.getElementById('counter').innerHTML = "OH NO! OH NO! YOU JUST GOT BANKRUPT!!!!!!";
+      document.getElementById('t').innerHTML = counter;
+    }
+    else if(money == 0)
+    {
+      counter = 0;
+        document.getElementById('counter').innerHTML = "OH NO! OH NO! YOU JUST LOST A TURN";
+        document.getElementById('t').innerHTML = counter;
+    }
+  }
+</script>
+</head>
+<center>
+<h1 id = "h1">--WHEEL OF FORTUNE--<h1>
+<hr id = "line">
+<body onload = "display()">
+<input id = "text" type = "letter" placeholder = "ENTER A GUESS">
+<input id = "guessText" type = "button" value = "Submit Guess" onclick = "Run()">
+<br>
+<div class = "loseATurn">
+Puzzle:
+<span id = "puz"></span>
+</div>
+<div class = "loseATurn">
+Your Spin:
+<span id = "counter"></span>
+</div>
+<div class = "loseATurn">
+</div>
+<div class = "loseATurn">
+Your Total Money:
+<span id = "t"></span>
+</div>
+<div class = "loseATurn">
+<span id = "fin"></span>
+</div>
+<div class = "loseATurn">
+<img class = "img" src = "wheel.png">
+</div>
+<center>
+</body>
+</html>

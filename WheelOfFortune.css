@@ -1,0 +1,103 @@
+body
+{
+  background-image: url("h.jpg");
+}
+.img
+{
+
+}
+.rotated
+{
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  }
+.img
+{
+  transition: all .5s ease;
+  height: 400px;
+  width: 400px;
+}
+#h1
+{
+  text-align: center;
+  color: white;
+  border-color: black;
+}
+#line
+{
+  border-color: white;
+  border-color: white;
+}
+#a
+{
+  border-radius: 12px;
+  text-align: center;
+  color: blue;
+  border-color: blue;
+}
+#text
+{
+  border-radius: 12px;
+  color: blue;
+  border-color: blue;
+  text-align: center;
+}
+#winnings
+{
+  color: white;
+  font-size: 20px;
+}
+
+#money
+{
+  color: white;
+  font-size: 20px;
+}
+
+#t
+{
+  color: white;
+  font-size: 20px;
+}
+#display
+{
+  color: white;
+  font-size: 25px;
+}
+#guessText
+{
+text-align: center;
+border-radius: 12px;
+text-align: center;
+color: blue;
+border-color: blue;
+}
+#bankrupt
+{
+  color: white;
+  font-size: 20px;
+}
+.loseATurn
+{
+  color: white;
+  font-size: 20px;
+}
+#fin
+{
+  color: white;
+  font-size: 20px;
+}
+#puz
+{
+  color: white;
+  font-size: 20px;
+}
+#p
+{
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+}
